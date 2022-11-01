@@ -5,12 +5,14 @@ public class Menu {
     String appetizers;
     String desserts;
 
+// default constructor for menu model
     public Menu(String mains, String appetizers, String desserts) {
         this.mains = mains;
         this.appetizers = appetizers;
         this.desserts = desserts;
     }
 
+// getters and setters for the model
     public String getMains() {
         return this.mains;
     }

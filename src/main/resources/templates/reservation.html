@@ -15,6 +15,7 @@
             <th>Name</th>
             <th>Amount of seating</th>
         </tr>
+        <!--this is where the users data will be stored-->
         <tr th:each=" i:${seatingItems}">
            <td th:text="${i.name}"></td>
             <td th:text="${i.seating}"></td>

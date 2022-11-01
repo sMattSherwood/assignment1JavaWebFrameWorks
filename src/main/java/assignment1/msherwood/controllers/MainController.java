@@ -19,6 +19,7 @@ public class MainController {
 
     
 // seating injection
+// this will allow the seating service be displayed 
 SeatingService seatingService;
 
 @Autowired
@@ -36,8 +37,9 @@ public String displayReservation(@RequestParam String name,
     model.addAttribute("reservationOrder", message);
     return "reservationsOrders";
 }
+// end of seating service injection
 
-
+// this is the menu service 
 @RequestMapping(value = "menu", method = RequestMethod.POST)
 public String displayMenu(@RequestParam String mains,
 @RequestParam String appetizers, @RequestParam String desserString,
@@ -57,6 +59,7 @@ Model model)
     {
         return "menu";
     }
+    // this will allow the data from the form to display on menu reciept
     @RequestMapping(value = "/menu", method = RequestMethod.POST)
     public String postMenu(
         @RequestParam String mains,
@@ -77,6 +80,7 @@ Model model)
     {
         return "arrangeSeating";
     }
+    // this will use the data gathered by the user to display on reservation
     @RequestMapping(value = "/arrangeSeating", method = RequestMethod.POST)
     public String addReservation(
         @RequestParam String name,

@@ -4,12 +4,12 @@ public class ArrangeSeating {
     String name;
     Integer seating;
 
-
+// default consstructor for the arrange seating model
     public ArrangeSeating(String name, Integer seating) {
         this.name = name;
         this.seating = seating;
     }
-
+// this is the getters and setters for arrange seating model
     public String getName() {
         return this.name;
     }

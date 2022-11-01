@@ -10,5 +10,15 @@
 </head>
 <body>
     <h1>Seating Order Print</h1>
+     <table class="table" style="max-width:500px;">
+        <tr>
+            <th>Name</th>
+            <th>Amount of seating</th>
+        </tr>
+        <tr th:each=" i:${seatingItems}">
+           <td th:text="${i.name}"></td>
+            <td th:text="${i.seating}"></td>
+        </tr>
+    </table> 
 </body>
 </html>

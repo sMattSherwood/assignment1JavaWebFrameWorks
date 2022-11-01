@@ -1,30 +1,30 @@
 package assignment1.msherwood.models;
 
 public class ArrangeSeating {
-    String Name;
-    String Seating;
+    String name;
+    Integer seating;
 
-    public ArrangeSeating(String Name, String Seating) {
-        this.Name = Name;
-        this.Seating = Seating;
+
+    public ArrangeSeating(String name, Integer seating) {
+        this.name = name;
+        this.seating = seating;
     }
-
 
     public String getName() {
-        return this.Name;
+        return this.name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getSeating() {
-        return this.Seating;
+    public Integer getSeating() {
+        return this.seating;
     }
 
-    public void setSeating(String Seating) {
-        this.Seating = Seating;
+    public void setSeating(Integer seating) {
+        this.seating = seating;
     }
-
+ 
     
 }

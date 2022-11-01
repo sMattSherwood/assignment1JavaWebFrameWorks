@@ -11,5 +11,18 @@
 <body>
     <h1>Arrange Seating</h1>
     <a href="/menu">Menu</a>
+    <br>
+    <form method="post" style="max-width:500px;">
+        <div class="form-group">
+            <label>Enter the name of reservation</label>
+            <input class="form-control" type="text" name="name">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Enter amount of seats</label>
+            <input class="form-control" type="number" name="seating">
+        </div>
+        <input type="submit" value="Reserve Seats" formaction="/reservation">
+    </form>
 </body>
 </html>

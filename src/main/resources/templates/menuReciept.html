@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <table>
+    <table class="table" style="max-width: 500px;">
         <tr>
             <th>Mains</th>
             <th>appetizers</th>
             <th>desserts</th>
         </tr>
         <tr th:each=" i:{menu}">
-            <td th:text="$:{i.mains}"></td>
-            <td th:text="$:{i.appetizers}"></td>
-            <td th:text="$:{i.desserts}"></td>
+            <td th:text="${i.mains}"></td>
+            <td th:text="${i.appetizers}"></td>
+            <td th:text="${i.desserts}"></td>
         </tr>
     </table>
     

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import assignment1.msherwood.models.ArrangeSeating;
 import assignment1.msherwood.models.Menu;
 
 @Controller
@@ -15,19 +16,17 @@ public class MainController {
 
     
 //  links that will appear on index
-ArrayList<Menu> menuItems = new ArrayList<>();
+    ArrayList<Menu> menuItems = new ArrayList<>();
     @RequestMapping(value = "/menu", method = RequestMethod.GET)
     public String getMenu()
     {
         return "menu";
     }
-
-
     @RequestMapping(value = "/menu", method = RequestMethod.POST)
     public String postMenu(
-        @RequestParam String mains,
-        @RequestParam String appetizers,
-        @RequestParam String desserts,
+        @RequestParam(required = true, defaultValue = "0") String mains,
+        @RequestParam(required = true, defaultValue = "0") String appetizers,
+        @RequestParam(required = true, defaultValue = "0") String desserts,
         Model model
     )
     {
@@ -37,16 +36,22 @@ ArrayList<Menu> menuItems = new ArrayList<>();
         return "menuReciept";
     }
 
+    ArrayList<ArrangeSeating> reservationItems = new ArrayList<>();
     @RequestMapping(value = "/arrangeSeating", method = RequestMethod.GET)
     public String getArrangeSeating()
     {
         return "arrangeSeating";
     }
-
-    @RequestMapping("/seatingOrderPrint")
-    public String getAeatingOrderPrint()
+    @RequestMapping(value = "/arrangeSeating", method = RequestMethod.POST)
+    public String addReservation(
+        @RequestParam String name,
+        @RequestParam Integer seating,
+        Model model
+    )
     {
-        return "seatingOrderPrint";
-    } 
-
+        ArrangeSeating newArrangeSeating = new ArrangeSeating(name, seating);
+        reservationItems.add(newArrangeSeating);
+        model.addAttribute("seatingItems", newArrangeSeating);
+        return "reservation";
+    }
 }
